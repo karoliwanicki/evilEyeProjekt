@@ -1,0 +1,21 @@
+// @mixin borderRadius($value){
+//   -webkit-border-radius: $value;
+//   -moz-border-radius: $value;
+// }
+//
+//
+// @mixin box-shadow($color){
+//   -webkit-box-shadow: 10px 10px 5px 0 $color;
+//   -moz-box-shadow: 10px 10px 5px 0 $color;
+//  box-shadow: 10px 10px 5px 0 $color;
+// }
+//
+//
+//
+// $newWidth: 500px;
+//
+// @mixin changeWidth {
+//   @media(max-width:#{$newWidth}){
+//     @content;
+//   }
+// }
