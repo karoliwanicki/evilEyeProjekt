@@ -72,6 +72,12 @@ table {
   height: 50px;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 .main-width {
   width: 100%;
   max-width: 1200px;
@@ -98,11 +104,20 @@ table {
   flex-wrap: wrap;
   color: white;
   font-family: league_gothicregular;
-  font-size: 20px;
 }
 
-.top_nav li {
+.top_nav button {
   display: inline-block;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 80px;
+  padding-right: 80px;
+  color: white;
+  font-size: 20px;
+  font-family: league_gothicregular;
+  background-color: Transparent;
+  font-weight: bolder;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }

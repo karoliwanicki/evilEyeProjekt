@@ -1,4 +1,5 @@
-// @import 'modules/all';
+@import 'modules/mixins';
+@import "modules/variables";
 //
 //
 // @import "partials/base";
@@ -27,6 +28,11 @@
 .hidden{
   height: 50px;
 }
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
 
 .main-width{
   width: 100%;
@@ -53,16 +59,8 @@
     flex-wrap: wrap;
     color: white;
     font-family: league_gothicregular;
-    font-size: 20px;
-
-
-
   }
-  li{
-    display: inline-block;
-    padding-left: 50px;
-    padding-right: 50px;
-
-
+  button{
+    @include topButton;
   }
 }
