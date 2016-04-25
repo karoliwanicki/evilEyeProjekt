@@ -1,37 +1,173 @@
-// @mixin borderRadius($value){
-//   -webkit-border-radius: $value;
-//   -moz-border-radius: $value;
-// }
-//
-//
-// @mixin box-shadow($color){
-//   -webkit-box-shadow: 10px 10px 5px 0 $color;
-//   -moz-box-shadow: 10px 10px 5px 0 $color;
-//  box-shadow: 10px 10px 5px 0 $color;
-// }
-//
-//
-//
-// $newWidth: 500px;
-//
-// @mixin changeWidth {
-//   @media(max-width:#{$newWidth}){
-//     @content;
-//   }
-// }
-@mixin topButton {
-  display: inline-block;
-  padding-left: 80px;
-  padding-right: 80px;
+
+/* styling links in top menu*/
+@mixin topLinks {
   color: white;
-  font-size: 20px;
+  text-decoration: none;
+  padding-left: 50px;
+  padding-right: 50px;
+  z-index: 99;
   font-family: league_gothicregular;
-  background-color: Transparent;
-  font-weight: bolder;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  overflow: hidden;
-  outline:none;
+
+}
+
+/*mixin to alternate padding left/right for menu items*/
+@mixin nav-spacing {
+  @media screen and (min-width: 320px) and (max-width: 435px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+}
+
+// @mixin logoSwitch {
+//     @media screen and (min-width: 300px) and (max-width: 435px){
+//         @include flexDisplay;
+//         justify-content: center;
+//         padding-left: 1%;
+//         padding-top: 5%;
+//         content: url('../images/wilk_ribbon1.png');
+//
+//     }
+
+// }
+
+
+/* flex display prefix mixin */
+@mixin flexDisplay {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/*styling slider elements*/
+@mixin sliderTop {
+  .rslides li {
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+    }
+  .rslides li:first-child {
+    position: relative;
+    display: block;
+    float: left;
+    }
+  .rslides img {
+    display: block;
+    height: auto;
+    float: left;
+    width: 100%;
+    border: 0;
+    }
+
+}
+/* mixin to adapt slider height to RWD. Will change with pictures better suited for a slider. Placeholder solution*/
+@mixin sliderHeight {
+  @media screen and (min-width: 300px) and (max-width: 435px){
+    height: 200px;
+  }
+
+}
+
+
+/*mixin for big banner name styling*/
+@mixin spanGalleryType {
+  span{
+    width: 100%;
+    // height: 40%;
+    color: white;
+    text-align: center;
+    font-family: league_gothicregular;
+    margin-top: 65%;
+    z-index: 99;
+  }
+
+}
+/* mixin for name/price banners styling*/
+@mixin namePriceLeft {
+  span{
+  position: absolute;
+  @media screen and (min-width: 300px) and (max-width: 435px){
+    // width: 100%;
+    max-width: 100%;
+  }
+  margin-top: 35%;
+  width: 40%;
+  max-width: 40%;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-family: league_gothicCnRg;
+  color: white;
+  padding-left: 4%;
+  text-align: center;
+  &:hover{
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  }
+
+}
+/* mixin for 0.6 opacity black layer on big banners*/
+@mixin layerBlack {
+  .layer{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     z-index: 0;
+  }
+
+}
+/*font size maps for each element*/
+$nav-font-size:(
+null: 16px,
+320px: 20px,
+768px: 26px,
+1024px: 26px,
+1920px: 26px,
+);
+$big-banner-font-size:(
+null: 16px,
+320px: 40px,
+768px: 80px,
+1024px: 80px,
+1920px: 80px,
+);
+$small-banner-font-size:(
+null:16px,
+320px: 18px,
+768px: 24px,
+1024px: 24px,
+1920px: 24px,
+);
+$footer-font-size:(
+null:  16px,
+320px: 12px,
+768px: 12px,
+1024px: 16px,
+1920px: 16px,
+);
+$footer-toplist-font-size:(
+null: 20px,
+320px: 16px,
+768px: 16px,
+1024px: 20px,
+1920px: 20px,
+);
+/*font size mixin to use for each element*/
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null{
+      font-size: $fs-font-size;
+    }
+    @else {
+      @media screen and(min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
 
 }

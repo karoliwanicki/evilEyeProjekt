@@ -1,66 +1,387 @@
 @import 'modules/mixins';
 @import "modules/variables";
-//
-//
-// @import "partials/base";
 @import "partials/reset";
 @font-face {
     font-family: 'league_gothicregular';
     src: url('../fonts/leaguegothic-regular.eot');
-    src: url('../fonts/leaguegothic-regular.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/leaguegothic-regular.woff2') format('woff2'),
-         url('../fonts/leaguegothic-regular.woff') format('woff'),
-         url('../fonts/leaguegothic-regular.ttf') format('truetype'),
-         url('../fonts/leaguegothic-regular.svg#league_gothicregular') format('svg');
+    src: url('../fonts/leaguegothic-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/leaguegothic-regular.woff2') format('woff2'), url('../fonts/leaguegothic-regular.woff') format('woff'), url('../fonts/leaguegothic-regular.ttf') format('truetype'), url('../fonts/leaguegothic-regular.svg#league_gothicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'league_gothicCnRg';
+    src: url('../fonts/leaguegothic-condensedregular.eot');
+    src: url('../fonts/leaguegothic-condensedregular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/leaguegothic-condensedregular.woff2') format('woff2'),
+         url('../leaguegothic-condensedregular.woff') format('woff'),
+         url('../leaguegothic-condensedregular.ttf') format('truetype'),
+         url('../leaguegothic-condensedregular.svg#league_gothicCnRg') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
-
-//ctrl+D szuka po zaznaczonym wyrazie w dol
-
-*{
-  box-sizing : border-box;
+// ctrl+D szuka po zaznaczonym wyrazie w dol
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
 }
-.clear{
-  clear: both;
+body {
+    margin-top: 1%;
 }
-.hidden{
-  height: 50px;
+.clear {
+    clear: both;
 }
-.sticky{
+.main-width {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.sticky {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9999;
 }
-
-.main-width{
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  }
-
-.header{
-  .logo_top{
-    display: flex;
-    justify-content:center;
-    flex-wrap: wrap;
-  }
-}
-.top_nav{
-  display: flex;
+.lookBook{
+  @include flexDisplay;
   justify-content: center;
+  align-content: center;
+  position: fixed;
+  top:0;
+  left: 0;
   width: 100%;
-  background-color: black;
-  ul{
+  height: 100rem;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 99999999999999999999999;
+  display: none;
+  iframe{
+    width: 60%;
+    height: 60vh;
+    position: relative;
+    margin-top: 10%;
+    border: 1px solid black;
+}
+button{
+  position: absolute;
+  top:0;
+  right: 1;
+  width: 5%;
+  color: white;
+  background: none;
+  margin-bottom: 50%;;
+  font-size: 26px;
+  border: none;
+  font-family: league_gothicCnRg;
+  z-index: 999999999999999999999999;
+  cursor: pointer;
+  &:focus {
+     outline: none;
+    }
+}
+p{
+  position: absolute;
+  // margin: 5% auto 0 auto;
+  font-size: 90px;
+  color: white;
+  font-family: league_gothicregular;
+  top:0;
+  margin-left: 45%;
+  margin-top: 3%;
+}
+}
+.header {
+    .logo_top {
+        @include flexDisplay;
+        justify-content: center;
+        margin-bottom: 8%;
+        // @include logoSwitch;
+        img {
+            max-width: 100%;
+        }
+    }
+
+}
+.cart{
+  @include flexDisplay;
+  justify-content: space-around;
+  position: fixed;
+  right: 0;
+  top:0;
+  margin-top: 1%;
+  margin-right: 1%;
+  font-size: 20px;
+  width: 12%;
+  @media screen and (min-width: 300px) and (max-width: 435px){
+  position: relative;
+  }
+  // padding-right: 1%;
+  img{
+    float: left;
+    margin-right: 1%;
+    z-index: 999;
+    @media screen and (min-width: 300px) and (max-width: 435px){
+      display: none;
+    }
+  }
+  a{
+    text-decoration: none;
+    font-family: league_gothicCnRg;
+    color: black;
+    @media screen and (min-width: 300px) and (max-width: 435px){
+      color: white;
+    }
+  }
+  span{
+    font-family: league_gothicCnRg;
+    color: black;
+    @media screen and (min-width: 300px) and (max-width: 435px){
+      color: white;
+    }
+  }
+}
+
+.top_nav {
+    // @include flexDisplay;
+    // justify-content: center;
+
+    width: 100%;
+    background-color: black;
+    z-index: 99;
+    margin-bottom: 5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    ul {
+        list-style: none;
+        @include flexDisplay;
+        justify-content: space-around;
+        @media screen and (min-width: 300px) and (max-width: 435px){
+          align-content: center;
+        }
+        color: white;
+        font-family: league_gothicCnRg;
+    }
+    a, li {
+        @include topLinks;
+        @include font-size($nav-font-size);
+        @include nav-spacing;
+        cursor: pointer;
+        font-family: league_gothicCnRg;
+    }
+    .lookBookShow{
+      @media screen and (min-width: 300px) and (max-width: 435px){
+        display: none;
+      }
+    }
+}
+.rslides {
+    position: relative;
     list-style: none;
-    display: flex;
-    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+    @include sliderHeight;
+    padding: 0;
+    margin: 0;
+}
+@include sliderTop;
+.slider_control{
+  font-family: league_gothicregular;
+  @include font-size($nav-font-size);
+}
+.big_box {
+    @include flexDisplay;
     flex-wrap: wrap;
+      @media screen and (min-width: 300px) and (max-width: 435px){
+        flex-direction: column;
+      }
+}
+@for $i from 1 through 6 {
+    .mainContainer_#{$i}{
+        @include flexDisplay flex-wrap: wrap;
+        width: 50%;
+        @media screen and (min-width: 300px) and (max-width: 435px){
+          width: 100%;
+        }
+    }
+}
+.mainContainer_1 {
+    background-color: rgba(0, 0, 0, 0.9);
+    background-image: url('../images/men.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+      @media screen and (min-width: 300px) and (max-width: 435px){
+        background-size: cover;
+      }
+    position: relative;
+    margin-top: 5%;
+    @include font-size($big-banner-font-size);
+    @include layerBlack;
+    @include spanGalleryType;
+}
+.mainContainer_2 {
+    @include flexDisplay;
+    flex-wrap: wrap;
+    @media screen and (min-width: 300px) and (max-width: 435px){
+      flex-direction: column;
+    }
+    font-size: 0;
+    position: relative;
+    margin-top: 5%;
+    @include namePriceLeft;
+    @for $i from 1 through 4 {
+        .gallery_men_#{$i}{
+            width: 50%;
+            font-size: 0;
+              @media screen and (min-width: 300px) and (max-width: 435px){
+                width: 100%;
+              }
+            img {
+                max-width: 100%;
+            }
+            span{
+              @include font-size($small-banner-font-size);
+            }
+        }
+    }
+}
+
+.mainContainer_3 {
+    @include flexDisplay;
+    flex-wrap: wrap;
+    @media screen and (min-width: 300px) and (max-width: 435px){
+      flex-direction: column;
+    }
+    font-size: 0;
+    position: relative;
+    @include namePriceLeft;
+    @for $i from 1 through 4 {
+        .gallery_women_#{$i}{
+            width: 50%;
+            font-size: 0;
+            @media screen and (min-width: 300px) and (max-width: 435px){
+              width: 100%;
+              // max-width: 100%;
+               img{
+                  width: 120%;
+                }
+            }
+
+            img {
+                max-width: 100%;
+            }
+            span{
+              @include font-size($small-banner-font-size);
+            }
+        }
+    }
+}
+.mainContainer_4 {
+    background-image: url('../images/women.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    @media screen and (min-width: 300px) and (max-width: 435px){
+      background-position: center;
+      background-size: cover;
+    }
+    @include font-size($big-banner-font-size);
+    @include layerBlack;
+    @include spanGalleryType;
+    z-index: 50;
+}
+.mainContainer_5 {
+    background-image: url('../images/acc.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media screen and (min-width: 300px) and (max-width: 435px){
+      background-size: cover;
+      margin-bottom: 0;
+    }
+    @include spanGalleryType;
+    @include font-size($big-banner-font-size);
+    position: relative;
+    margin-bottom: 5%;
+    @include layerBlack;
+}
+.mainContainer_6 {
+    @include flexDisplay;
+    flex-wrap: wrap;
+    @media screen and (min-width: 300px) and (max-width: 435px){
+      flex-direction: column;
+    }
+    position: relative;
+    font-size: 0;
+    margin-bottom: 5%;
+    @include namePriceLeft;
+    @for $i from 1 through 4 {
+        .gallery_accessories_#{$i}{
+            width: 50%;
+            font-size: 0;
+            @media screen and (min-width: 300px) and (max-width: 435px){
+              width: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            span{
+              @include font-size($small-banner-font-size);
+              text-decoration: none;
+            }
+        }
+    }
+}
+
+.footer_main {
+    @include flexDisplay;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 0.5%;
+    padding-left: 2%;
+    padding-bottom: 0.5%;
+    margin-bottom: 5%;
+    background-color: black;
     color: white;
     font-family: league_gothicregular;
-  }
-  button{
-    @include topButton;
-  }
-}
+    li{
+      line-height: 1.5;
+      text-align: justify;
+      @media screen and (min-width: 300px) and (max-width: 435px){
+        line-height: 1;
+      }
+      @include font-size($footer-font-size);
+      &:hover{
+        cursor: pointer;
+      }
+      &:first-of-type{
+        @include font-size($footer-toplist-font-size);
+        cursor:default;
+      }
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
+    }
+    .icons{
+      padding-top: 1%;
+      a{
+        text-decoration: none;
+      }
+        font-size: 12px;
+        color: white;
+        // margin-top: 1%;
+        &:hover{
+          color: rgba(255, 255, 255, 0.5);
+        }
+        @media screen and (min-width: 300px) and (max-width: 435px){
+        a{
+          img{
+            width: 20px;
+            height: 20px;
+          }
+        }
+        }
+
+
+    }

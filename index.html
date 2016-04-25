@@ -5,26 +5,190 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="script/responsiveslides.min.js"></script>
+    <script src="script/simpleCart.js" type="text/javascript"></script>
     <script src="script/app.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Evil Eye Clth.</title>
 </head>
 
 <body>
-<header class='header'>
-  <div class='main-width'>
-  <div class='logo_top'><img src='images/wilk_logo_smallest1.png'></div>
-  <div class='clear'></div>
-  <div class='hidden'></div>
-  <nav class='top_nav'>
-    <ul>
-      <button>Women</button>
-      <button>Men</button>
-      <button>Accessories</button>
-    </ul>
-  </nav>
-</div>
-</header>
+  <div class='cart'>
+    <img src='images/shop.png'>
+  <p><span class="simpleCart_quantity"> </span> <span class="simpleCart_total"></span></p></br>
+    <a href="productPage/checkoutPage.html">Checkout</a>
+    <a href="javascript:;" class="simpleCart_empty">Empty</a>
+  </div>
+  <div class='lookBook'>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ti4oCvyqgvg" frameborder="0" controls='1' autoplay='0' allowfullscreen></iframe>
+    <button id='closeVid'> &#10006 </button>
+    <p><strong>EVIL&bull;EYE</strong></p>
+  </div>
+    <header class='header'>
+        <div class='main-width'>
+            <div class='logo_top'>
+                <img src='images/wilk_logo_smallest1.png'></img>
+            </div>
+            <div class='clear'></div>
+            <nav class='top_nav'>
+                <ul>
+                    <li><a href='index.html'>Home</a>
+                    </li>
+                    <li><a href='gallery/galleryMale.html'>Men</a>
+                    </li>
+                    <li><a href='gallery/galleryFemale.html'>Women</a>
+                    </li>
+                    <li><a href='gallery/galleryAccessories.html'>Accessories</a>
+                    </li>
+                    <li class='lookBookShow'>Lookbook</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="section">
+        <div class="main-width">
+            <ul class="rslides">
+                <li><img src="images/slider/1.jpg">
+                </li>
+                <li><img src="images/slider/2.jpg">
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class='clear'></div>
+    <section class='main section'>
+        <div class='main-width'>
+            <div class='big_box'>
+                <div class='mainContainer_1 black'>
+                    <div class='layer'></div><span class='typeOfGallery'>MEN</span>
+                </div>
+                <div class='mainContainer_2'>
+                    <div class="gallery_men_1">
+                        <span>Hand Of Mysteries</br>69zł</span>
+                        <a href='productPage/handOfMysteries.html'><img src='images/clothes/male_smaller/1_small.png'></img>
+                        </a>
+
+
+                    </div>
+                    <div class="gallery_men_2">
+                        <span>Hieronymus</br>69zł</span>
+                        <a href='productPage/hieronymus.html'> <img src='images/clothes/male_smaller/2_small.jpg'></img>
+                        </a>
+
+                    </div>
+                    <div class="gallery_men_3">
+                        <span>Priest</br>69zł</span>
+                        <a href='productPage/priest.html'><img src='images/clothes/male_smaller/3_small.jpg'>
+                        </a>
+                    </div>
+                    <div class="gallery_men_4">
+                        <span>Lamb Of God</br>69zł</span>
+                        <a href='productPage/lambOfGOd.html'><img src='images/clothes/male_smaller/4_small.jpg'>
+                        </a>
+                    </div>
+                </div>
+                <div class='mainContainer_3'>
+                    <div class="gallery_women_1">
+                        <span>Mona Lisa</br>89zł</span>
+                        <a href='productPage/monaLisa_women.html'><img src='images/clothes/female_smaller/1_small.jpg'>
+                        </a>
+                    </div>
+                    <div class="gallery_women_2">
+                        <span>Burn The Lies!</br>69zł</span>
+                        <a href='productPage/burnTheLies_women.html'><img src='images/clothes/female_smaller/2_small.jpg'>
+                        </a>
+                    </div>
+                    <div class="gallery_women_3">
+                        <span>ΔBRΔHΔDΔBRΔ</br>69zł</span>
+                        <a href='productPage/ΔBRΔHΔDΔBRΔ_women.html'><img src='images/clothes/female_smaller/3_small.jpg'>
+                        </a>
+                    </div>
+                    <div class="gallery_women_4">
+                        <span>Varsity Vulture</br>169zł</span>
+                        <a href='productPage/Vulture_Varsity_women.html'><img src='images/clothes/female_smaller/4_small.jpg'>
+                        </a>
+                    </div>
+                </div>
+                <div class='mainContainer_4'>
+                    <div class='layer'></div>
+                    <span class='typeOfGallery'>WOMEN</span>
+                </div>
+                <div class='mainContainer_5'>
+                    <div class='layer'></div>
+                    <span class='typeOfGallery'>ACCESSORIES</span>
+                </div>
+                <div class='mainContainer_6'>
+                    <div class='gallery_accessories_1'>
+                        <span>Black Wax </br>30zł</span>
+                        <a href='productPage/blackWax_Accesories.html'><img src='images/accessories/accessories_small/1_small.jpg'>
+                        </a>
+                    </div>
+                    <div class="gallery_accessories_2">
+                        <span>Nazwa </br>Cena</span>
+                        <a href='#'><img src='images/accessories/accessories_small/3_small.jpg'>
+                        </a>
+                    </div>
+                    <div class="gallery_accessories_3">
+                        <span>Ride A Bike</br>30zł</span>
+                        <a href='productPage/rideABike_Accessories.html'><img src='images/accessories/accessories_small/2_smaller.jpg'>
+                        </a>
+                    </div>
+                    <div class="gallery_accessories_4">
+                        <span>Nazwa </br>Cena</span>
+                        <a href='#'><img src='images/accessories/accessories_small/4_small.jpg'>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class='clear'></div>
+    <footer>
+        <div class="main-width">
+            <div class='footer_main'>
+
+
+                <ul>
+                    <li><u>Shop:</u> </li>
+                    <li><a href='gallery/galleryMale.html'>men</a></li>
+                    <li><a href='gallery/galleryFemale.html'>women</a></li>
+                    <li><a href='gallery/galleryAccessories.html'>accesories</a></li>
+                </ul>
+
+
+                <ul>
+                    <li><u>Help:</u></li>
+                    <li><a href='infopage/infoPage.html'>shipping</a></li>
+                    <li><a href='infopage/infoPage.html'>returns</a></li>
+                    <li><a href='infopage/infoPage.html'>contact us</a></li>
+                </ul>
+
+
+                <ul>
+                    <li><u>Account:</u></li>
+                    <li><a href='accountPage/accountpage.html'>create account</a></li>
+                    <li>login</li>
+                    <li>lost password :( </li>
+                </ul>
+
+
+                <div class='icons'>
+                    <a href='http://instagram.com/coldestplaceinheart'><img src='images/icons/insta.png'></img>
+                    </a>
+                    <a href='http://facebook.com'><img src='images/icons/face.png'></img>
+                    </a>
+                    <a href='https://www.youtube.com/user/EvilEyeClothing'><img src='images/icons/yt.png'></img>
+                    </a></br>
+                    <p> &copy copywright by evil eye clothing 2016</p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </footer>
 
 </body>
 
